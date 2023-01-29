@@ -66,5 +66,17 @@ end
 
 # Object representing a book
 class BookInStock
-  # YOUR CODE HERE
+  # tell Ruby to create setters and getters
+  attr_accessor :isbn
+  attr_accessor :price
+  def initialize(isbn, price)
+    if isbn.empty? || price<=0
+      raise ArgumentError
+    end
+    @isbn = isbn
+    @price = price
+  end
+  def price_as_string
+    return '$' + '%0.2f' % price
+  end
 end
