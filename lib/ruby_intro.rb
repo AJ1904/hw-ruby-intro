@@ -41,15 +41,25 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant?(string)
-  # YOUR CODE HERE
+  # check if string is empty or does not start with an alphabet
+  if string.empty? || !string[0].match(/[a-z]/i)
+    return false
+  end
+  # check if first character is not a consonant
+  return !(string[0]).match(/[aeiou]/i)
 end
 
 def binary_multiple_of_4?(string)
-  # YOUR CODE HERE
+  # check if string is empty or has any other character than 0 or 1
+  if string.empty? || string.match(/[^01]/)
+    return false
+  end
+  # binary number is multiple of 4 if last two digits are 0
+  return true if string=="0" || string[-2..].match("00")
 end
 
 # Part 3
